@@ -44,8 +44,8 @@ class StockSerializer(serializers.ModelSerializer):
         # обновляем связанную таблицу StockProduct
         for position in positions:
             obj, created = StockProduct.objects.update_or_create(
-                stock_id=stock.id,
-                product_id=position['product'],
+                stock=stock,
+                product=position['product'],
                 defaults={'quantity': position['quantity'], 'price': position['price']},
             )
 

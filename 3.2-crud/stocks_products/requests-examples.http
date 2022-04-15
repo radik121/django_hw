@@ -74,7 +74,7 @@ Content-Type: application/json
   "positions": [
     {
       "product": 2,
-      "quantity": 100,
+      "quantity": 140,
       "price": 130.80
     },
     {
@@ -88,5 +88,5 @@ Content-Type: application/json
 ###
 
 # поиск складов, где есть определенный продукт
-GET http://localhost:8000/api/v1/stocks/?products=3
+GET http://localhost:8000/api/v1/stocks/?products=бак
 Content-Type: application/json

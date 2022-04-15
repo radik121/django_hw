@@ -16,9 +16,17 @@ class ProductViewSet(ModelViewSet):
 
 
 class StockViewSet(ModelViewSet):
-    queryset = Stock.objects.all()
     serializer_class = StockSerializer
-    filter_backends = [SearchFilter]
-    filterset_fields = ['products', ]
-    search_fields = ['^products__title', '^products__description']
     pagination_class = LimitOffsetPagination
+
+    def get_queryset(self):
+        queryset = Stock.objects.all()
+        product = self.request.query_params.get('products')
+        if product is not None:
+            if product.isdigit():
+                queryset = queryset.filter(products=product)
+            else:
+                queryset = queryset.filter(products__title__icontains=product) | \
+                           queryset.filter(products__description__icontains=product)
+
+        return queryset
