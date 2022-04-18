@@ -1,29 +1,27 @@
 # примеры API-запросов
 
-@baseUrl = https://localhost:8000/api
-
 # получение объявлений
-GET {{baseUrl}}/advertisements/
+GET http://localhost:8000/api/advertisements/
 Content-Type: application/json
 
 ###
 
 # создание объявления
-POST {{baseUrl}}/advertisements/
+POST http://localhost:8000/api/advertisements/
 Content-Type: application/json
-Authorization: Token 902ef055a9ac93f18327f1f9c45ab059f1a62c7d
+Authorization: Token 2f690e3b98b07d771e1818f745d9a126c9a25760
 
 {
-  "title": "Шкаф IKEA",
-  "description": "Срочно"
+  "title": "Кроссовки Adidas",
+  "description": "45 р-р, новые"
 }
 
 ###
 
 # попытка поменять объявление
-PATCH {{baseUrl}}/advertisements/1/
+PATCH http://localhost:8000/api/advertisements/3/
 Content-Type: application/json
-Authorization: Token 902ef055a9ac93f18327f1f9c45ab059f1a62c7d
+Authorization: Token 81666f1d1ba12ca04b51421ae6a238a23f8bd6fc
 
 {
   "status": "CLOSED"
@@ -32,11 +30,16 @@ Authorization: Token 902ef055a9ac93f18327f1f9c45ab059f1a62c7d
 ###
 
 # фильтрация по создателю
-GET {{baseUrl}}/advertisements/?creator=3
+GET http://localhost:8000/api/advertisements/?creator=1
 Content-Type: application/json
 
 ###
 
 # фильтрация по дате
-GET {{baseUrl}}/advertisements/?created_at_before=2020-10-01
+GET http://localhost:8000/api/advertisements/?created_at_after=2022-04-17
 Content-Type: application/json
+
+###
+
+DELETE http://localhost:8000/api/advertisements/30/
+Authorization: Token 2f690e3b98b07d771e1818f745d9a126c9a25760
