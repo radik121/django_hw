@@ -19,9 +19,9 @@ Authorization: Token 2f690e3b98b07d771e1818f745d9a126c9a25760
 ###
 
 # попытка поменять объявление
-PATCH http://localhost:8000/api/advertisements/3/
+PATCH http://localhost:8000/api/advertisements/58/
 Content-Type: application/json
-Authorization: Token 81666f1d1ba12ca04b51421ae6a238a23f8bd6fc
+Authorization: Token 2f690e3b98b07d771e1818f745d9a126c9a25760
 
 {
   "status": "CLOSED"
@@ -41,5 +41,5 @@ Content-Type: application/json
 
 ###
 
-DELETE http://localhost:8000/api/advertisements/30/
-Authorization: Token 2f690e3b98b07d771e1818f745d9a126c9a25760
+DELETE http://localhost:8000/api/advertisements/58/
+Authorization: Token 81666f1d1ba12ca04b51421ae6a238a23f8bd6fc
