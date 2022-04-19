@@ -24,7 +24,7 @@ Content-Type: application/json
 Authorization: Token 2f690e3b98b07d771e1818f745d9a126c9a25760
 
 {
-  "status": "CLOSED"
+  "status": "OPEN"
 }
 
 ###
